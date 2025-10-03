@@ -1,0 +1,21 @@
+.box {
+  height: 353px;
+  position: relative;
+  width: 515px;
+
+  .div {
+    border: 1px dashed;
+    border-color: #8a38f5;
+    border-radius: 5px;
+    height: 353px;
+    left: 931px;
+    overflow: hidden;
+    position: fixed;
+    top: 202px;
+    width: 515px;
+  }
+
+  .secondary-button-instance {
+    position: absolute !important;
+  }
+}
