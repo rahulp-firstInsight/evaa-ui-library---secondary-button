@@ -8,12 +8,6 @@
 
   .book-appointment {
     color: #ffffff;
-    font-family: var(--label-font-family);
-    font-size: var(--label-font-size);
-    font-style: var(--label-font-style);
-    font-weight: var(--label-font-weight);
-    letter-spacing: var(--label-letter-spacing);
-    line-height: var(--label-line-height);
     margin-top: -1.00px;
     position: relative;
     text-align: center;
@@ -58,8 +52,7 @@
         0deg,
         rgba(0, 0, 0, 0.47) 0%,
         rgba(0, 0, 0, 0.47) 100%
-      ),
-      linear-gradient(0deg, rgba(236, 64, 122, 1) 0%, rgba(236, 64, 122, 1) 100%);
+      ), linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
     display: inline-flex;
     top: 92px;
   }
@@ -75,14 +68,13 @@
         0deg,
         rgba(255, 255, 255, 0.47) 0%,
         rgba(255, 255, 255, 0.47) 100%
-      ),
-      linear-gradient(0deg, rgba(236, 64, 122, 1) 0%, rgba(236, 64, 122, 1) 100%);
+      ), linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
     display: inline-flex;
     top: 164px;
   }
 
   &.default {
-    background-color: #ec407a;
+    background-color: #49dd2b;
     top: 20px;
   }
 
@@ -118,5 +110,51 @@
 
   &.with-icon-true.disabled {
     left: 247px;
+  }
+
+  &.clicked .book-appointment {
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    font-style: var(--label-font-style);
+    font-weight: var(--label-font-weight);
+    letter-spacing: var(--label-letter-spacing);
+    line-height: var(--label-line-height);
+  }
+
+  &.disabled .book-appointment {
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    font-style: var(--label-font-style);
+    font-weight: var(--label-font-weight);
+    letter-spacing: var(--label-letter-spacing);
+    line-height: var(--label-line-height);
+  }
+
+  &.with-icon-true .book-appointment {
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    font-style: var(--label-font-style);
+    font-weight: var(--label-font-weight);
+    letter-spacing: var(--label-letter-spacing);
+    line-height: var(--label-line-height);
+  }
+
+  &.hover .book-appointment {
+    font-family: var(--label-font-family);
+    font-size: var(--label-font-size);
+    font-style: var(--label-font-style);
+    font-weight: var(--label-font-weight);
+    letter-spacing: var(--label-letter-spacing);
+    line-height: var(--label-line-height);
+  }
+
+  &.default.with-icon-false .book-appointment {
+    font-family: var(--text-font-family);
+    font-size: var(--text-font-size);
+    font-style: var(--text-font-style);
+    font-weight: var(--text-font-weight);
+    letter-spacing: var(--text-letter-spacing);
+    line-height: var(--text-line-height);
+    text-shadow: 0px 4px 4px #00000040;
   }
 }

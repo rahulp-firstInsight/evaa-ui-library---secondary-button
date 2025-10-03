@@ -1,48 +1,65 @@
 import React from "react";
-import "./SecondaryButton.scss";
+import { IconArrows } from "../IconArrows";
+import "./style.scss";
 
-interface SecondaryButtonProps {
-  label?: string;
-  variant?: "default" | "hover" | "clicked" | "disabled";
-  withIcon?: boolean;
-  onClick?: () => void;
+interface Props {
+  hasIcon: boolean;
+  hasLabel: boolean;
+  textLabel: string;
+  secondaryButton: "disabled" | "clicked" | "hover" | "default";
+  withIcon: boolean;
+  className: any;
 }
 
-export const SecondaryButton: React.FC<SecondaryButtonProps> = ({
-  label = "Book Appointment",
-  variant = "default",
-  withIcon = false,
-  onClick,
-}) => {
-  const getIconSrc = () => {
-    switch (variant) {
-      case "hover":
-        return "https://c.animaapp.com/vtIwxNoi/img/icon-arrows-7.svg";
-      case "disabled":
-        return "https://c.animaapp.com/vtIwxNoi/img/icon-arrows-8.svg";
-      case "clicked":
-        return "https://c.animaapp.com/vtIwxNoi/img/icon-arrows-6.svg";
-      default:
-        return "https://c.animaapp.com/vtIwxNoi/img/icon-arrows-5.svg";
-    }
-  };
-
+export const SecondaryButton = ({
+  hasIcon = true,
+  hasLabel = true,
+  textLabel = "Book Appointment",
+  secondaryButton,
+  withIcon,
+  className,
+}: Props): JSX.Element => {
   return (
-    <button
-      className={`secondary-button secondary-button--${variant} ${withIcon ? "secondary-button--with-icon" : ""}`}
-      onClick={onClick}
-      disabled={variant === "disabled"}
+    <div
+      className={`secondary-button with-icon-${withIcon} ${secondaryButton} ${className}`}
     >
-      <span className="secondary-button__label">{label}</span>
+      {hasLabel && <div className="book-appointment">{textLabel}</div>}
+
       {withIcon && (
-        <span className="secondary-button__icon">
-          <img
-            src={getIconSrc()}
-            alt="Arrow icon"
-            className="secondary-button__icon-image"
-          />
-        </span>
+        <>
+          <>
+            {hasIcon && (
+              <>
+                <>
+                  {secondaryButton === "default" && (
+                    <div className="frame">
+                      <IconArrows
+                        className="icon-arrows-instance"
+                        iconArrows="https://c.animaapp.com/dzwd38J3/img/icon-arrows-5.svg"
+                      />
+                    </div>
+                  )}
+
+                  {["clicked", "disabled", "hover"].includes(
+                    secondaryButton,
+                  ) && (
+                    <IconArrows
+                      className="instance-node"
+                      iconArrows={
+                        secondaryButton === "hover"
+                          ? "https://c.animaapp.com/dzwd38J3/img/icon-arrows-7.svg"
+                          : secondaryButton === "disabled"
+                            ? "https://c.animaapp.com/dzwd38J3/img/icon-arrows-8.svg"
+                            : "https://c.animaapp.com/dzwd38J3/img/icon-arrows-6.svg"
+                      }
+                    />
+                  )}
+                </>
+              </>
+            )}
+          </>
+        </>
       )}
-    </button>
+    </div>
   );
 };
