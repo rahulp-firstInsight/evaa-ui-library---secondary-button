@@ -1,0 +1,92 @@
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 49px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--label-font-family);
+  font-size: var(--label-font-size);
+  font-style: var(--label-font-style);
+  font-weight: var(--label-font-weight);
+  letter-spacing: var(--label-letter-spacing);
+  line-height: var(--label-line-height);
+
+  &__label {
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+  }
+
+  &__icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &--default {
+    background-color: #ec407a;
+
+    &:hover {
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.47) 0%,
+          rgba(255, 255, 255, 0.47) 100%
+        ),
+        linear-gradient(0deg, rgba(236, 64, 122, 1) 0%, rgba(236, 64, 122, 1) 100%);
+    }
+
+    &:active {
+      background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.47) 0%,
+          rgba(0, 0, 0, 0.47) 100%
+        ),
+        linear-gradient(0deg, rgba(236, 64, 122, 1) 0%, rgba(236, 64, 122, 1) 100%);
+    }
+  }
+
+  &--hover {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.47) 0%,
+        rgba(255, 255, 255, 0.47) 100%
+      ),
+      linear-gradient(0deg, rgba(236, 64, 122, 1) 0%, rgba(236, 64, 122, 1) 100%);
+  }
+
+  &--clicked {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.47) 0%,
+        rgba(0, 0, 0, 0.47) 100%
+      ),
+      linear-gradient(0deg, rgba(236, 64, 122, 1) 0%, rgba(236, 64, 122, 1) 100%);
+  }
+
+  &--disabled {
+    background-color: #8d8a8b;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: #8d8a8b;
+    }
+  }
+
+  &--with-icon {
+    padding: 16px 20px 16px 32px;
+  }
+}
