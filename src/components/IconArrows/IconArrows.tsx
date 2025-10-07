@@ -8,7 +8,7 @@ interface Props {
 
 export const IconArrows = ({
   className,
-  iconArrows = "https://c.animaapp.com/dzwd38J3/img/icon-arrows-4.svg",
+  iconArrows = "https://c.animaapp.com/MbncmwNc/img/icon-arrows-4.svg",
 }: Props): JSX.Element => {
   return (
     <img

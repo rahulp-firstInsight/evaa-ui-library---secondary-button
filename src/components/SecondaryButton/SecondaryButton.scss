@@ -1,72 +1,58 @@
 .secondary-button {
   align-items: center;
-  border: none;
   border-radius: 8px;
-  cursor: pointer;
-  display: inline-flex;
   gap: 20px;
   height: 49px;
   padding: 16px 20px 16px 32px;
   position: relative;
-  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  transition: all 0.2s ease;
 
   .book-appointment {
     color: #ffffff;
-    margin-top: -1px;
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
-    width: fit-content;
     font-family: var(--label-font-family);
     font-size: var(--label-font-size);
     font-style: var(--label-font-style);
     font-weight: var(--label-font-weight);
     letter-spacing: var(--label-letter-spacing);
     line-height: var(--label-line-height);
+    margin-top: -1.00px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
   }
 
-  .icon-wrapper {
-    display: flex;
+  .frame {
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    margin-bottom: -5.42px;
+    margin-top: -5.42px;
+    position: relative;
   }
 
-  .icon-arrows {
-    height: 28px;
-    width: 28px;
-    display: block;
+  .icon-arrows-instance {
+    height: 27.83px !important;
+    left: unset !important;
+    position: relative !important;
+    top: unset !important;
+    width: 27.8px !important;
   }
 
-  &.default {
-    background-color: #49dd2b;
-
-    &:hover {
-      background: linear-gradient(
-          0deg,
-          rgba(255, 255, 255, 0.47) 0%,
-          rgba(255, 255, 255, 0.47) 100%
-        ),
-        linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
-    }
-
-    &:active {
-      background: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.47) 0%,
-          rgba(0, 0, 0, 0.47) 100%
-        ),
-        linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
-    }
+  .instance-node {
+    height: 27.83px !important;
+    left: unset !important;
+    margin-bottom: -5.42px !important;
+    margin-top: -5.42px !important;
+    position: relative !important;
+    top: unset !important;
+    width: 27.8px !important;
   }
 
-  &.hover {
-    background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.47) 0%,
-        rgba(255, 255, 255, 0.47) 100%
-      ),
-      linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
+  &.with-icon-false {
+    display: inline-flex;
   }
 
   &.clicked {
@@ -74,25 +60,54 @@
         0deg,
         rgba(0, 0, 0, 0.47) 0%,
         rgba(0, 0, 0, 0.47) 100%
-      ),
-      linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
+      ), linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
+    display: inline-flex;
   }
 
   &.disabled {
     background-color: #8d8a8b;
+    display: inline-flex;
     cursor: not-allowed;
-    opacity: 0.6;
   }
 
-  &.with-icon-false {
-    .book-appointment {
-      font-family: var(--text-font-family);
-      font-size: var(--text-font-size);
-      font-style: var(--text-font-style);
-      font-weight: var(--text-font-weight);
-      letter-spacing: var(--text-letter-spacing);
-      line-height: var(--text-line-height);
-      text-shadow: 0px 4px 4px #00000040;
-    }
+  &.hover {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.47) 0%,
+        rgba(255, 255, 255, 0.47) 100%
+      ), linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
+    display: inline-flex;
+  }
+
+  &.default {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ), linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
+  }
+
+  &.default.with-icon-true {
+    display: flex;
+  }
+
+  &.default.with-icon-false .book-appointment {
+    text-shadow: 0px 4px 4px #00000040;
+  }
+
+  &:not(.disabled):hover {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.47) 0%,
+        rgba(255, 255, 255, 0.47) 100%
+      ), linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
+  }
+
+  &:not(.disabled):active {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.47) 0%,
+        rgba(0, 0, 0, 0.47) 100%
+      ), linear-gradient(0deg, rgba(73, 222, 44, 1) 0%, rgba(73, 222, 44, 1) 100%);
   }
 }
